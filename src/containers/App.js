@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import "../styles/App.css";
 
-import Header from "../components/Header";
-import UserInput from "../components/UserInput";
-import Button from "../components/Button";
-import MessageBox from "../components/MessageBox";
+import Header from "../components/Header/Index";
+import UserInput from "../components/UserInput/Index";
+import Button from "../components/Button/Index";
+import MessageBox from "../components/MessageBox/Index";
 
 function App() {
   const [signUp, setSignUp] = useState("sign up");
-  const [message, setMessage] = useState();
+  const [message, setMessage] = useState({ toggle: false, message: "" });
 
   const inputHandler = (event) => {
+    // setMessage({ toggle: false, message: "" });
     setSignUp(event.target.value);
     if (event.target.value === "") setSignUp("sign up");
   };
 
   const clickHandler = () => {
-    setMessage(signUp);
+    setMessage({ toggle : !message.toggle, message: signUp });
   };
 
   return (
@@ -24,7 +25,7 @@ function App() {
       <Header />
       <UserInput input={inputHandler} />
       <Button changed={signUp} click={clickHandler} />
-      <MessageBox msg={message} />
+      {message.toggle ? <MessageBox msg={message} /> : null}
     </div>
   );
 }

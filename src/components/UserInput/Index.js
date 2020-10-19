@@ -1,11 +1,11 @@
 import React from 'react';
-import "../styles/UserInput.css"
+import "./UserInput.css"
 
-function UserInput(props) {
+function UserInput({input}) {
     return (
       <div className="user-input">
           <label>Please Enter Your UserName : </label>
-          <input type="text" onChange={props.input} />
+          <input type="text" onChange={input} />
       </div>
     );
   }

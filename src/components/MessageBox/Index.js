@@ -1,10 +1,10 @@
 import React from 'react';
-import "../styles/MessageBox.css"
+import "./MessageBox.css"
 
-function MessageBox(props) {
+function MessageBox({msg}) {
     return (
       <div className="message-box">
-          <h3>Hello : {props.msg}</h3>
+          <h3>Hello : {msg}</h3>
       </div>
     );
   }

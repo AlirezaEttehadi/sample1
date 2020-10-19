@@ -1,7 +1,7 @@
 import React from 'react';
-import "../styles/Header.css"
+import "./Header.css"
 
-function Header(props) {
+function Header() {
     return (
       <header>
           <h1>The New Website!</h1>
